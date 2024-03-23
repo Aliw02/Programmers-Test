@@ -5,7 +5,6 @@
 
 body {
     height: 90vh;
-    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +16,6 @@ body {
     outline: none;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 /* End Of Global Rules */
@@ -31,8 +29,18 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 24px;
+    margin: 20px 30px;
     position: relative;
     box-shadow: 0px 0px 10px 0px #383838
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        flex-direction: column-reverse;
+        margin-top: 400px;
+        height: 100%;
+        border-radius: 0;
+    }
 }
 
 /* End Of Container */
@@ -45,6 +53,13 @@ body {
     flex-direction: column;
     height: 100%;
     width: 50%;
+}
+@media screen and (max-width: 992px) {
+    .container .form-box {
+        width: 100%;
+        padding-bottom: 115px;
+        padding-top: 10px;
+    }
 }
 
 .container .form-box h1 {
@@ -73,6 +88,7 @@ body {
 
 .container .form-box form input {
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .container .form-box form input::placeholder {
@@ -81,11 +97,13 @@ body {
 
 .container .form-box form input[type="text"], 
 .container .form-box form input[type="password"] {
-    background-color: #F0EDFFCC;
     width: 364px;
     height: 52px;
+    background-color: #F0EDFFCC;
+    color: #1C1C1C;
+    font-size: 16px;
     border-radius: 16px;
-    padding: 0 30px ;
+    padding: 10px 30px;
     position: relative;
 }
 
@@ -200,8 +218,13 @@ body {
     border-bottom-right-radius: 24px;
 }
 
+@media screen and (max-width: 992px) {
+    .container .img-box {
+        display: none;
+    }
+}
+
 .container .img-box .content {
-    box-sizing: border-box;
     width: 412px;
     height: 524px;
     background: rgba(255, 255, 255, 0.21);
@@ -221,7 +244,7 @@ body {
     color: #FFF;
 }
 
-.container .img-box .content img {
+.container .img-box .content #woman {
     position: absolute;
     width: 785px;
     height: 524px;
@@ -229,16 +252,30 @@ body {
     top: -1px;
 }
 
-.content::before {
+.img-box .content .star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box .content .star::before {
     content: "";
     display: block;
     background-color: white;
-    width: 70px;
-    height: 70px;
+    width: 79px;
+    height: 79px;
     position: absolute;
     border-radius: 50%;
-    bottom: 30px;
+    bottom: 100px;
     left: -35px;
+}
+
+.img-box .content .star  #star-img{
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 69%;
+    left: -17px;
 }
 
 /* End Of Img-Box */
